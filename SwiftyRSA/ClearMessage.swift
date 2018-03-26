@@ -94,6 +94,18 @@ public class ClearMessage: Message {
         let encryptedData = Data(bytes: UnsafePointer<UInt8>(encryptedDataBytes), count: encryptedDataBytes.count)
         return EncryptedMessage(data: encryptedData)
     }
+
+    /// Encrypts a clear message with a public key and returns an encrypted message.
+    ///
+    /// - Parameters:
+    ///   - key: Public key to encrypt the clear message with
+    ///   - algorithm: Algorithm used for encryption
+    /// - Returns: Encrypted message
+    @available(iOS 10.0, *)
+    public func encryptedWithAlgo(with key: PublicKey, algorithm: SecKeyAlgorithm) -> EncryptedMessage {
+        let encryptedData = SecKeyCreateEncryptedData(key.reference, algorithm, self.data as CFData, nil) as! Data
+        return EncryptedMessage(data: encryptedData)
+    }
     
     /// Signs a clear message using a private key.
     /// The clear message will first be hashed using the specified digest type, then signed
