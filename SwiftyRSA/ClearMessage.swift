@@ -101,9 +101,8 @@ public class ClearMessage: Message {
     ///   - key: Public key to encrypt the clear message with
     ///   - algorithm: Algorithm used for encryption
     /// - Returns: Encrypted message
-    @available(iOS 10.0, *)
     public func encryptedWithAlgo(with key: PublicKey, algorithm: SecKeyAlgorithm) -> EncryptedMessage {
-        let encryptedData = SecKeyCreateEncryptedData(key.reference, algorithm, self.data as CFData, nil) as! Data
+        let encryptedData = SecKeyCreateEncryptedData(key.reference, algorithm, self.data as CFData, nil)! as Data
         return EncryptedMessage(data: encryptedData)
     }
     
