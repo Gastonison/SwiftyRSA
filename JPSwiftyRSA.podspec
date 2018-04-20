@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JPSwiftyRSA"
-  s.version      = "1.3.1"
+  s.version      = "1.4.0"
   s.summary      = "Public key RSA encryption in Swift."
 
   s.description  = <<-DESC
@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
   s.exclude_files = "SwiftyRSA/SwiftyRSA+ObjC.swift"
   s.framework    = "Security"
   s.requires_arc = true
+  s.swift_version = "3.2"
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.2' }
   
   s.ios.deployment_target = "8.3"
   s.tvos.deployment_target = "9.2"
