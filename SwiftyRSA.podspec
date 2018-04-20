@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "SwiftyRSA"
+  s.name         = "JPSwiftyRSA"
   s.version      = "1.3.1"
   s.summary      = "Public key RSA encryption in Swift."
 
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "Scoop" => "ops@takescoop.com" }
 
-  s.source       = { :git => "https://github.com/TakeScoop/SwiftyRSA.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/Gastonison/SwiftyRSA.git", :tag => s.version }
   s.source_files = "SwiftyRSA/*.{swift,m,h}"
   s.exclude_files = "SwiftyRSA/SwiftyRSA+ObjC.swift"
   s.framework    = "Security"
