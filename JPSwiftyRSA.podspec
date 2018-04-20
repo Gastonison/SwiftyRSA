@@ -20,9 +20,9 @@ Pod::Spec.new do |s|
   s.swift_version = "3.2"
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.2' }
   
-  s.ios.deployment_target = "8.3"
-  s.tvos.deployment_target = "9.2"
-  s.watchos.deployment_target = "2.2"
+  s.ios.deployment_target = "10.0"
+  s.tvos.deployment_target = "10.0"
+  s.watchos.deployment_target = "3.0"
 
   s.subspec "ObjC" do |sp|
     sp.source_files = "SwiftyRSA/*.{swift,m,h}"
